@@ -1,0 +1,11 @@
+{% extends "base.html" %}
+{% block title %}Simulator{% endblock %}
+{% block body %}
+<header class="phead"><h1>Live failure simulator</h1></header>
+<div class="wrap"><div class="card"><h2>Live failure simulator</h2>
+   <div class="row"><button id="play" class="go" type="button">Pause</button><button id="reset" type="button">Restart</button><button id="simdl" type="button">Download CSV</button><b id="live"></b></div>
+   <div>Failure rate &lambda; = <b id="lamv"></b></div><input id="lam" type="range" min="0.001" max="0.05" step="0.0005" value="0.01">
+   <canvas id="sim" class="sim" height="220"></canvas>
+   <p class="note">Each dot is one part: aqua is working, pink has failed. The dashed line is the theory and the amber line is this live run. It restarts with new random failures every cycle. Use Download CSV to save the current run (each unit, its failure time and whether it has failed yet).</p></div>
+  </div>
+{% endblock %}

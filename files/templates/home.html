@@ -1,0 +1,19 @@
+{% extends "base.html" %}
+{% block title %}Home{% endblock %}
+{% block body %}
+<header id="top">
+ <h1>Know when it will fail, before it does.</h1>
+ <p class="sub">An Interactive Statistical Analysis and Predictive Reliability Visualization Platform Using Exponential Distribution and Python.</p>
+ <a class="btn go" href="/analyze">Start analyzing</a>
+ <div class="chips"><span class="chip">Maximum-likelihood fit</span><span class="chip">Live reliability curves</span><span class="chip">Series vs parallel systems</span></div>
+ <svg id="hero" class="hero-chart" viewBox="0 0 1000 200" preserveAspectRatio="none" aria-label="Live reliability curve">
+  <defs><linearGradient id="g" x1="0" x2="1"><stop offset="0" stop-color="#2de2c5"/><stop offset=".5" stop-color="#7c8cff"/><stop offset="1" stop-color="#ff5ea8"/></linearGradient></defs>
+  <line x1="0" y1="190" x2="1000" y2="190" stroke="rgba(255,255,255,.3)" stroke-width="2"/>
+  <line id="hline" x1="0" y1="0" x2="0" y2="200" stroke="#fff" stroke-width="2" stroke-dasharray="5 5" opacity=".6"/>
+  <path id="hpath" d="M0 10"/>
+  <circle id="hdot" r="7" fill="#fff"/>
+  <circle id="hpen" r="9" fill="#ffb84d"/>
+ </svg>
+</header>
+<div class="wrap"><div class="grid"><a class="card" href="/analyze"><h2>Analyze</h2><p>Paste or upload failure times and fit the exponential model.</p></a><a class="card" href="/predict"><h2>Predict</h2><p>Drag the sliders and see reliability, risk and system charts.</p></a><a class="card" href="/simulator"><h2>Simulator</h2><p>Watch parts fail live and download the run as CSV.</p></a><a class="card" href="/learn"><h2>Learn</h2><p>Plain-English guide to the formulas and results.</p></a></div></div>
+{% endblock %}

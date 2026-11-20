@@ -1,0 +1,13 @@
+{% extends "base.html" %}
+{% block title %}Learn{% endblock %}
+{% block body %}
+<header class="phead"><h1>Learn the basics</h1></header>
+<div class="wrap"><details class="card" open><summary>How to read this dashboard</summary><ul><li><b>&lambda; (failure rate):</b> failures expected per unit of time. Bigger means less reliable.</li><li><b>MTTF:</b> the average lifetime, equal to 1/&lambda;.</li><li><b>R(t):</b> the chance a part is still working at time t.</li><li><b>Model fit check:</b> green means your data behaves like an exponential model.</li></ul></details><div class="card"><h2>The formulas, in plain words</h2><ul>
+<li>Failure density: <code>f(t) = &lambda;e<sup>-&lambda;t</sup></code></li>
+<li>Reliability (still working at t): <code>R(t) = e<sup>-&lambda;t</sup></code></li>
+<li>Average lifetime: <code>MTTF = 1/&lambda;</code>, and median life is <code>ln 2 / &lambda;</code></li>
+<li>Series system (all must work): <code>R<sup>n</sup></code>. Parallel system (one is enough): <code>1 - (1 - R)<sup>n</sup></code></li>
+<li>The failure rate never changes, so a used part is as likely to survive the next hour as a new one (memoryless).</li></ul></div>
+<div class="card"><h2>About this project</h2><p>An Interactive Statistical Analysis and Predictive Reliability Visualization Platform Using Exponential Distribution and Python.</p>
+<p class="note">Built with Python, Flask, NumPy and SciPy for the statistics, and Plotly with plain JavaScript for the visuals.</p></div></div>
+{% endblock %}

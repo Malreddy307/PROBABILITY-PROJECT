@@ -1,0 +1,20 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+<meta charset="utf-8">
+<meta name="viewport" content="width=device-width,initial-scale=1">
+<title>{% block title %}RelyLab{% endblock %} | Exponential Reliability Platform</title>
+<link href="https://fonts.googleapis.com/css2?family=DM+Sans:wght@400;500;700&family=Sora:wght@600;800&display=swap" rel="stylesheet">
+<link rel="stylesheet" href="{{ url_for('static', filename='style.css') }}">
+{% block head %}{% endblock %}
+</head>
+<body>
+<nav class="nav">
+ <a class="logo" href="/"><span class="dot"></span>RelyLab</a>
+ <div class="links">{% for u,n in [('/','Home'),('/analyze','Analyze'),('/predict','Predict'),('/simulator','Simulator'),('/learn','Learn')] %}<a href="{{ u }}" class="{{ 'active' if request.path==u }}">{{ n }}</a>{% endfor %}</div>
+</nav>
+{% block body %}{% endblock %}
+<footer>Built with Flask, NumPy, SciPy and Plotly.</footer>
+<script src="{{ url_for('static', filename='app.js') }}"></script>
+</body>
+</html>
